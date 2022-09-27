@@ -1,5 +1,7 @@
 const handlerController = require("./handlerController");
 const Order = require("../models/orderModel");
+const User = require("../models/userModel");
+const catchErrorAsync = require("../utility/catchErrorAsync");
 
 class OrderController {
   getAllOrder(req, res, next) {
@@ -8,9 +10,13 @@ class OrderController {
   getOneOrder(req, res, next) {
     handlerController.getOneData(req, res, next, Order);
   }
-  createOrder(req, res, next) {
-    handlerController.createData(req, res, next, Order);
-  }
+  createOrder = catchErrorAsync(async (req, res, next) => {
+    const user = await User.findOne({ chat_id: req.body.chat_id });
+    const data = {
+      from: user._id,
+    };
+  });
+
   updateOrder(req, res, next) {
     handlerController.updateData(req, res, next, Order);
   }

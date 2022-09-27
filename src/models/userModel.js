@@ -8,15 +8,18 @@ const userSchema = mongoose.Schema(
     },
     last_name: {
       type: String,
+      default: null,
       // required: true,
     },
     username: {
       type: String,
+      default: null,
       // required: true,
     },
     chat_id: {
       type: String,
       required: true,
+      unique: true,
     },
     orders: [
       {
