@@ -4,8 +4,8 @@ require("dotenv").config({ path: "./.env" });
 require("./config/db");
 
 app.listen(
-  (PORT = process.env.SERVER_PORT),
-  (URL = process.env.SERVER_URL),
+  (PORT = process.env.SERVER_PORT || 1234),
+  // (URL = process.env.SERVER_URL),
   (err) =>
     err
       ? console.log(err)
