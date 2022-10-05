@@ -6,6 +6,7 @@ const bot = new Bot("5630916341:AAFpRPTmGpxqZJYPTLxR_Q7yuVRvkAJxN5s", {
 const fetch = require("node-fetch");
 
 bot.command("start", async (ctx) => {
+  ctx.reply("Keldiku");
   try {
     // Registering user to DB
     const response = await fetch(
@@ -20,7 +21,7 @@ bot.command("start", async (ctx) => {
         headers: { "Content-Type": "application/json", chat_id: ctx.chat.id },
       }
     );
-    console.log(await response.json());
+    // console.log(await response.json());
   } catch (error) {
     return new Error(error);
   }
