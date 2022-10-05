@@ -28,7 +28,7 @@ form {
 }
 
 .add-btn {
-  padding: 0.4rem 1.5rem;
+  padding: 0.5rem 1rem;
   background-color: rgba(255, 150, 0, 1);
   color: #fff;
   font-weight: bold;
@@ -43,12 +43,52 @@ form {
 
 .order-btn {
   font-weight: bold;
+  font-size: 1.2rem;
   letter-spacing: 0.1rem;
   width: 100vw;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   background-color: rgb(0, 200, 0);
   color: #fff;
-  display: none;
+  outline: none;
+  border: none;
+  /* display: none; */
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.minus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(255, 0, 0);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* padding: 0.2rem 0.5rem; */
+}
+
+.minus:hover,
+.minus:active {
+  background-color: rgb(255, 60, 60);
+}
+
+.plus {
+  background-color: rgb(0, 150, 0);
+}
+
+.plus:hover,
+.plus:active {
+  background-color: rgb(50, 150, 50);
+}
+
+.number-food {
+  font-size: 1rem;
+  color: #00aeff;
 }
 
 .list {
@@ -88,4 +128,37 @@ form {
   max-width: 100%;
   max-height: 6rem;
   min-height: 5rem;
+}
+
+.view-order {
+  background-color: #000;
+  width: 100%;
+  padding: 0.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.view-order__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+
+.view-order__label {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.view-order__list-item {
+  display: grid;
+  grid-template-columns: 4rem auto;
+  gap: 2rem;
+}
+
+.view-order__list-item--name {
+  font-size: 0.8rem;
+  font-weight: bold;
 }

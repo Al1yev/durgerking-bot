@@ -21,17 +21,23 @@ const userSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
-    orders: [
-      {
-        _id: false,
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "order",
-      },
-    ],
+    role: {
+      type: String,
+      value: "user",
+      enum: ["user", "admin"],
+    },
+    order_list: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "order",
+    },
   },
   {
     timestamps: true,
   }
 );
+
+userSchema.pre("save", function () {
+  this.role = "user";
+});
 
 module.exports = new mongoose.model("user", userSchema);
