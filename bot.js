@@ -1,6 +1,8 @@
 require("dotenv").config({ path: "./.env" });
 const { Bot } = require("grammy");
-const bot = new Bot(process.env.BOT_TOKEN, { polling: true });
+const bot = new Bot("5630916341:AAFpRPTmGpxqZJYPTLxR_Q7yuVRvkAJxN5s", {
+  polling: true,
+});
 const fetch = require("node-fetch");
 
 bot.command("start", async (ctx) => {
