@@ -6,7 +6,6 @@ const bot = new Bot("5630916341:AAFpRPTmGpxqZJYPTLxR_Q7yuVRvkAJxN5s", {
 const fetch = require("node-fetch");
 
 bot.command("start", async (ctx) => {
-  ctx.reply("Keldiku");
   try {
     // Registering user to DB
     const response = await fetch(
@@ -26,20 +25,25 @@ bot.command("start", async (ctx) => {
     return new Error(error);
   }
 
-  ctx.reply("Welcome :)))))", {
-    reply_markup: {
-      inline_keyboard: [
-        [
-          {
-            text: "Order Food",
-            web_app: {
-              url: "https://sparkly-hummingbird-fdbec0.netlify.app",
+  ctx.reply(
+    `Let's get started 🍟
+       
+    Please tap the button below to order your perfect lunch!`,
+    {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: "Order Food",
+              web_app: {
+                url: "https://sparkly-hummingbird-fdbec0.netlify.app",
+              },
             },
-          },
+          ],
         ],
-      ],
-    },
-  });
+      },
+    }
+  );
 });
 
 // bot.command("requestToApi", (ctx) => {
