@@ -7,7 +7,5 @@ app.listen(
   (PORT = process.env.SERVER_PORT || 1234),
   // (URL = process.env.SERVER_URL),
   (err) =>
-    err
-      ? console.log(err)
-      : console.log(`Server is listening on ${URL}:${PORT}`)
+    err ? console.log(err) : console.log(`Server is listening on ${PORT}`)
 );
