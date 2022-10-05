@@ -14,14 +14,14 @@ class OrderController {
   createOrder = catchErrorAsync(async (req, res, next) => {
     const user = await User.findOne({ chat_id: req.headers.chat_id });
     const orders = await Order.findById(user.order_list);
-    console.log(orders);
+    // console.log(orders);
     const data = {
       foods: req.body.order,
       order_time: Date.now(),
     };
     const newArr = orders.orders_list;
     newArr.push(data);
-    console.log(newArr);
+    // console.log(newArr);
     const newOrder = await Order.findByIdAndUpdate(user.order_list, {
       order_list: newArr,
     });

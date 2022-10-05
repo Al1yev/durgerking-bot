@@ -32,7 +32,7 @@ class UserController {
       { _id: user._id },
       { order_list: order_list._id }
     );
-    console.log(user);
+    // console.log(user);
 
     res.status(201).json({
       status: "Success",

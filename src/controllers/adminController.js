@@ -4,9 +4,9 @@ const catchErrorAsync = require("../utility/catchErrorAsync");
 
 class Admin {
   checkRole = catchErrorAsync(async (req, res, next) => {
-    console.log(req.headers);
+    // console.log(req.headers);
     const user = await User.findOne({ chat_id: req.headers.chat_id });
-    console.log(user);
+    // console.log(user);
     if (!user) return next(new AppError("User not found"));
 
     if (user.role !== "admin")
